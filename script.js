@@ -1,15 +1,14 @@
 let library = []
 
-function Book(title, author, pages, read, cover) {
-    if (!new.target) {
-        throw Error("You must be use the 'new' operator to call the constructor")
+class Book {
+    construcor(title, author, pages, read, cover) {
+        this.id = crypto.randomUUID
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+        this.cover = cover
     }
-    this.id = crypto.randomUUID()
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.cover = cover
 }
 
 const addBookToLibrary = (title, author, pages, read, cover) => {
@@ -97,7 +96,7 @@ addBookToLibrary('El sabueso de los Baskervill', 'Arthur Conan Doyle', 200, fals
 addBookToLibrary('Metro 2033', 'Dmitri Glujovski', 600, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwmjYROWkw9eEKmtAE56PYtGeOiXaNo1wZbQ&s')
 addBookToLibrary('Blindsight', 'Peter Watts', 400, false, 'https://mpd-biblio-covers.imgix.net/9781250237484.jpg')
 addBookToLibrary('Estudio en escarlata', 'Arthur Conan Doyle', 400, false, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ZToMraxzwuKmOhg4vLIGk7d68Bpv1v-nyg&s')
-addBookToLibrary('I Have No Mouth, and I Must Scream', 'Harlan Ellison', 20, true, 'https://upload.wikimedia.org/wikipedia/en/4/47/IHaveNoMouth.jpg')
+addBookToLibrary('I Hav e No Mouth, and I Must Scream', 'Harlan Ellison', 20, true, 'https://upload.wikimedia.org/wikipedia/en/4/47/IHaveNoMouth.jpg')
 addBookToLibrary('Python Crash Course', 'Eric Matthes', 200, true, 'https://images.cdn1.buscalibre.com/fit-in/360x360/ca/7f/ca7f7bff848bbbbde3c30f1fd5492abc.jpg')
 
 loopThroughLibraryArr()
