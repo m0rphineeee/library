@@ -1,8 +1,8 @@
 let library = []
 
 class Book {
-    construcor(title, author, pages, read, cover) {
-        this.id = crypto.randomUUID
+    constructor(title, author, pages, read, cover) {
+        this.id = crypto.randomUUID()
         this.title = title
         this.author = author
         this.pages = pages
@@ -14,7 +14,7 @@ class Book {
 const addBookToLibrary = (title, author, pages, read, cover) => {
     const book = new Book(title, author, pages, read, cover)
     library.push(book)
-} 
+}
 
 const container = document.getElementById('container') 
 const loopThroughLibraryArr = () => {
